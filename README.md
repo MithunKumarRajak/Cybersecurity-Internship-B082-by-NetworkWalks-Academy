@@ -29,7 +29,8 @@
 ├── README.md                      <- Root repository overview & progress tracker
 ├── Reports/
 │   ├── README.md                  <- Report index & templates
-│   └── Week1_Lab_Setup_Report.pdf <- Submitted Week 1 Lab Setup Report (PDF)
+│   ├── Week1_Lab_Setup_Report.pdf <- Submitted Week 1 Lab Setup Report (PDF)
+│   └── Week2_Pentest_Report.md    <- Week 2 Pentest Report (Markdown)
 ├── Resources/
 │   └── README.md                  <- References, downloads & cheat sheets
 ├── Week-1-Lab-Setup/
@@ -47,7 +48,7 @@
 | Week | Project | Track | Status | Report / Deliverable |
 |:---:|---|:---:|:---:|---|
 | **1** | [Lab Setup — Kali Linux 2026.2 + VirtualBox](Week-1-Lab-Setup/) | 🔧 Essentials | ✅ Completed | [📄 Week 1 PDF Report](Reports/Week1_Lab_Setup_Report.pdf) |
-| **2** | [Footprinting, Scanning & Report Writing](Week-2-Footprinting-Scanning/) | 🔴 Red Team | 🟡 In Progress | ⬜ Upcoming |
+| **2** | [Footprinting, Scanning & Report Writing](Week-2-Footprinting-Scanning/) | 🔴 Red Team | ✅ Completed | [📄 Week 2 Pentest Report](Reports/Week2_Pentest_Report.md) |
 | **3** | [Cracking & Attacking (Metasploit, JTR)](Week-3-Cracking-Attacking/) | 🔴 Red Team | ⬜ Upcoming | ⬜ Upcoming |
 | **4** | [Full Pentest + Wireshark SOC Analysis](Week-4-Full-Pentest-Project/) | 🔴🔵 Red + Blue | ⬜ Upcoming | ⬜ Upcoming |
 

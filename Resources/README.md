@@ -6,7 +6,7 @@
 
 ## 📋 Overview
 
-A practical reference guide containing verified software download sources, official documentation, and command cheat sheets directly practiced and utilized in the **Cybersecurity & Ethical Hacking Lab**.
+A practical reference guide containing verified software download sources, official documentation, web security databases, and command cheat sheets directly practiced in the **Cybersecurity & Ethical Hacking Internship**.
 
 ---
 
@@ -19,80 +19,166 @@ A practical reference guide containing verified software download sources, offic
 | 🧰 **Oracle VirtualBox** | Type-2 Hypervisor for isolated lab environment | [VirtualBox Downloads](https://virtualbox.org/wiki/Downloads) |
 | 📦 **7-Zip** | Archive utility for `.7z` VM image extraction | [7-Zip Official](https://7-zip.org/download.html) |
 
-### Operating System Images
+### Operating System & Security Tools
 
-| System | Role | Official Source |
+| System / Tool | Role | Official Source |
 |---|---|---|
 | 🐉 **Kali Linux 2026.2** | Attacker VM (Pre-built VirtualBox Image) | [Kali Linux Get-Kali](https://kali.org/get-kali) |
+| 👁️ **Nmap & Zenmap** | Free Security Scanner & Network Exploration Tool | [Nmap Official Downloads](https://nmap.org/download.html) |
+| 🌐 **ScanMe (Nmap)** | Authorized Public Practice Target for Port Scanning | [scanme.nmap.org](http://scanme.nmap.org/) |
+| 🔍 **Google Hacking Database** | OSINT Dorking & Google Reconnaissance Repository | [GHDB on Exploit-DB](https://www.exploit-db.com/google-hacking-database) |
+| 📚 **Zenmap Lab Tutorial** | NetworkWalks Academy Zenmap Scanning Practical | [NetworkWalks Zenmap Guide](https://networkwalks.com/lab-practice-network-scanning-with-zenmap/) |
 
 ---
 
-## 📖 Practiced Commands Reference
+## 📖 Nmap Cheatsheet & Command Reference (NetworkWalks Series)
 
-### 1. System Administration & Hardening (Week 1 Practiced)
-
+### 1. Target Selection Syntax
 ```bash
-# Verify system architecture & kernel release
-uname -a
+# Scan a single IP address
+nmap 10.0.0.1
 
-# Check active user identity and privileges
-whoami
-id
+# Scan a domain or hostname
+nmap www.networkwalks.com
 
-# Hardening default credentials (mandatory on first boot)
-passwd              # Update 'kali' user password
-sudo passwd root    # Set and secure 'root' account password
+# Scan a range of IP addresses
+nmap 10.0.0.1-99
+
+# Scan multiple distinct IPs
+nmap 10.0.0.1,10.0.0.2
+
+# Scan an entire CIDR subnet
+nmap 10.0.0.0/24
+
+# Scan targets listed in a text file
+nmap -iL LIST1.txt
+
+# Exclude specific targets from a subnet scan
+nmap 10.0.0.0/24 --exclude 10.0.0.1
 ```
 
-### 2. Network Inspection & Lab Subnet Verification (Week 1 Practiced)
-
+### 2. Target Scan Types
 ```bash
-# Inspect network interfaces and verify 10.0.2.15/24 IP assignment
-ifconfig
-ip a
+# TCP SYN / Stealth Scan (default with root privileges)
+nmap 10.0.0.1 -sS
 
-# Check active network routes and default gateway
-ip route
+# TCP Connect Scan (completes 3-way handshake, no root needed)
+nmap 10.0.0.1 -sT
 
-# Test internal gateway connectivity
-ping -c 4 10.0.2.1
+# TCP ACK Scan (maps firewall rule sets and filters)
+nmap 10.0.0.1 -sA
 
-# Test outbound internet and DNS resolution
-ping -c 4 8.8.8.8
-nslookup networkwalks.com
+# TCP FIN Scan (probes for RFC 793 compliance)
+nmap 10.0.0.1 -sF
+
+# UDP Port Scan (identifies DNS, SNMP, DHCP services)
+nmap 10.0.0.1 -sU
+
+# TCP Xmas Scan (sets FIN, URG, and PSH flags)
+nmap 10.0.0.1 -sX
+
+# List Scan (simply enumerates targets without sending probes)
+nmap 10.0.0.0/24 -sL
+
+# Ping Sweep (Host discovery only, no port scanning)
+nmap -sn 10.0.0.0/24
+
+# Aggressive Scan (OS detection, service versions, script scanning, traceroute)
+nmap 10.0.0.1 -A
+
+# Fast Scan (probes top 100 most common ports)
+nmap 10.0.0.1 -F
+
+# Scan over IPv6
+nmap -6 [2001:db8::1]
 ```
 
-### 3. Footprinting, OSINT & Reconnaissance (Week 2 Reference)
-
+### 3. Port Selection Options
 ```bash
-# Query domain WHOIS registration details
-whois [target-domain]
+# Scan a single port
+nmap 10.0.0.1 -p 21
 
-# DNS record enumeration
-nslookup [target-domain]
-dig [target-domain] ANY
+# Scan multiple specific ports
+nmap 10.0.0.1 -p 21,22,80,443
 
-# Open-source email, domain and IP harvesting
-theHarvester -d [target-domain] -b all -l 100
+# Scan a custom port range
+nmap 10.0.0.1 -p 1-1000
+
+# Scan by service name
+nmap 10.0.0.1 -p ssh,http,https
+
+# Scan all 65,535 TCP ports
+nmap 10.0.0.1 -p-
 ```
 
-### 4. Nmap & Zenmap Network Scanning (`10.0.2.0/24` Lab Subnet)
-
+### 4. Version & OS Detection
 ```bash
-# Host discovery sweep across the NatNetwork subnet
-nmap -sn 10.0.2.0/24
-
-# Fast scan of the top 100 most common ports
-nmap -T4 -F [target-ip]
+# Remote Operating System detection
+nmap 10.0.0.1 -O
 
 # Service version detection on open ports
-nmap -sV [target-ip]
+nmap 10.0.0.1 -sV
 
-# Remote Operating System fingerprinting
-nmap -O [target-ip]
+# Maximum version probing intensity (0 to 9)
+nmap 10.0.0.1 -sV --version-intensity 9
+```
 
-# Comprehensive scan (Service versions + OS detection + Traceroute)
-nmap -T4 -A -v [target-ip]
+### 5. Scan Speed & Timing Templates
+- `-T0` (Paranoid) / `-T1` (Sneaky): Slow scans for IDS/IPS evasion
+- `-T2` (Polite): Bandwidth-friendly scanning
+- `-T3` (Normal): Default timing template
+- `-T4` (Aggressive): Recommended for fast, reliable local lab scanning
+- `-T5` (Insane): Maximum speed (may drop packets on congested networks)
+
+### 6. Miscellaneous, Evasion & Output Flags
+```bash
+# Save output in standard human-readable text format
+nmap -oN scan_output.txt 10.0.0.1
+
+# Save output in XML format (for importing to tools/frameworks)
+nmap -oX scan_output.xml 10.0.0.1
+
+# Save in all three major formats (Nmap, XML, Grepable)
+nmap -oA pentest_results 10.0.0.1
+
+# Spoof source IP address
+nmap -S 10.0.0.99 10.0.0.1
+
+# Specify source network interface
+nmap -e eth0 10.0.0.1
+
+# Spoof MAC address
+nmap --spoof-mac 00:11:22:33:44:55 10.0.0.1
+
+# Run Nmap Scripting Engine (NSE) vulnerability checks
+nmap --script vuln 10.0.0.1
+```
+
+---
+
+## 🔎 Footprinting & OSINT Quick Reference
+
+```bash
+# Query domain registration details
+whois networkwalks.com
+
+# Web application technology fingerprinting
+whatweb -v -a 3 https://www.networkwalks.com
+
+# DNS resolution
+nslookup networkwalks.com
+
+# HTTP Header inspection
+curl -I https://www.networkwalks.com
+
+# Web Application Firewall (WAF) detection
+wafw00f https://www.networkwalks.com
+
+# Comprehensive DNS enumeration
+dnsrecon -d networkwalks.com -t std
+
+# OSINT email and subdomain harvesting
+theHarvester -d networkwalks.com -b all -l 100
 ```
 
 ---
@@ -103,6 +189,7 @@ nmap -T4 -A -v [target-ip]
 |---|---|---|
 | **Kali Linux Official Documentation** | OS configuration, package management & tool usage | [kali.org/docs](https://www.kali.org/docs/) |
 | **Nmap Reference Guide** | Official command-line flags, scan types & NSE scripts | [nmap.org/book/man.html](https://nmap.org/book/man.html) |
+| **Exploit-DB GHDB** | Verified Google Dorks and OSINT patterns | [exploit-db.com/ghdb](https://www.exploit-db.com/google-hacking-database) |
 | **Oracle VirtualBox User Manual** | Networking modes (NAT vs NAT Network), snapshot management | [virtualbox.org/manual](https://www.virtualbox.org/manual/) |
 
 ---
