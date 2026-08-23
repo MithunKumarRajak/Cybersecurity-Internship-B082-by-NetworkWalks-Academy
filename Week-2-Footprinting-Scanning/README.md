@@ -33,95 +33,143 @@ Week 2 focuses on the foundational phases of ethical hacking and penetration tes
 
 ## 📦 Project Modules & Status
 
-| Module ID | Module Name | Category | Scope | Status | Deliverable Link |
+| Module ID | Module Name | Category | Scope | Status | Deliverables |
 |---|---|:---:|---|:---:|---|
-| **W2-PM1** | Multi-Tool Kali Footprinting | **Elective** | 6 Kali tools (`whois`, `whatweb`, `nslookup`, `curl`, `wafw00f`, `dnsrecon`) | ✅ Completed | [View Section](#-w2-pm1-footprinting-with-multiple-kali-tools) |
+| **W2-PM1** | Multi-Tool Kali Footprinting | **Elective** | 6 Kali tools (`whois`, `whatweb`, `nslookup`, `curl`, `wafw00f`, `dnsrecon`) | ✅ Completed | [View Tasks](#-w2-pm1-footprinting-with-multiple-kali-tools) |
 | **W2-PM2** | Google Hacking Database (GHDB) | Elective | Google Dorks & search operator reconnaissance | 📚 Documented | [View Section](#-w2-pm2-ghdb-based-footprinting-attacks) |
 | **W2-PM3** | Maltego Reconnaissance | Elective | Graph-based entity link analysis & transforms | 📚 Documented | [View Section](#-w2-pm3-maltego-based-footprinting-attacks) |
 | **W2-PM4** | theHarvester OSINT | Elective | Email, domain, subdomain & IP enumeration | 📚 Documented | [View Section](#-w2-pm4-theharvester-based-footprinting-attacks) |
 | **W2-PM5** | **Zenmap / Nmap Scanning** | **Essential** | Host discovery, port scanning, OS/service detection, topology | ✅ Completed | [View Section](#-w2-pm5-zenmap--nmap-network-scanning-essential) |
-| **W2-PM-FINAL** | **Formal Pentest Report** | **Essential** | Professional client-ready vulnerability assessment report | ✅ Completed | [📄 Pentest Report](../Reports/Week2_Pentest_Report.md) |
+| **W2-PM-FINAL** | **Formal Pentest Report** | **Essential** | Client-ready vulnerability report (`.docx` & `.md`) | ✅ Completed | [📄 Markdown Report](../Reports/Week2_Pentest_Report.md) \| [📥 DOCX Report](../Reports/Week2_Footprinting_Reconnaissance_Report.docx) |
 
 ---
 
 ## 🔬 W2-PM1: Footprinting with Multiple Kali Tools
 
-Target: Authorized domain **`networkwalks.com`**
+Target: Authorized domain **`networkwalks.com`** | Comparison: **`example.com`**
 
-```
-+-----------------------------------------------------------------------------------+
-|                        W2-PM1: 6 KALI RECONNAISSANCE TASKS                        |
-+-----------------------------------------------------------------------------------+
-| 1. whois      -> Domain Ownership, Registrar & Nameservers                        |
-| 2. whatweb    -> CMS (WordPress 7.0.4) & Plugins (WP Download Manager 3.3.58)     |
-| 3. nslookup   -> Public IP Resolution (192.232.216.135)                           |
-| 4. curl -I    -> HTTP Response Headers & WordPress REST API (/wp-json/)           |
-| 5. wafw00f    -> Web Application Firewall Detection (ModSecurity SpiderLabs)      |
-| 6. dnsrecon   -> Comprehensive DNS Records (NS, MX, SPF/TXT, SRV Records)         |
-+-----------------------------------------------------------------------------------+
+---
+
+### Task 1: Domain Registration Lookup (`whois`)
+`whois` queries public registry databases that store domain registration details (registrar, creation/expiry dates, name servers, contact details).
+
+```bash
+# Standard lookup
+whois networkwalks.com
+
+# Suppress legal disclaimer text for clean output
+whois -H networkwalks.com
 ```
 
-### Task 1: Domain Registration Enumeration (`whois`)
-- **Objective:** Find domain registration details (owner, registrar, creation/expiration dates, name servers).
-- **Command:**
-  ```bash
-  whois networkwalks.com
-  ```
-- **Key Findings:** Registrar identity, status codes, creation & renewal timeline, authoritative nameservers.
-- **Attacker Insight:** Reveals contact channels, infrastructure providers, and contract lifecycles for social engineering or domain hijacking monitoring.
+![Figure 1 — WHOIS output for networkwalks.com](screenshots/figure1_whois.png)
+*Figure 1: WHOIS output showing registrar (GoDaddy), creation/expiry dates, and name servers.*
+
+![Figure 2 — WHOIS output with -H flag](screenshots/figure2_whois_suppress_disclaimer.png)
+*Figure 2: WHOIS output with `-H` flag suppressing legal disclaimers.*
+
+- **Key Findings:** Domain registered via `GoDaddy.com, LLC`; Created: `06 Nov 2019`; Expires: `06 Nov 2027`; Name servers hosted on HostGator (`ns6135` / `ns6136.hostgator.com`); Domain status locks (`clientDeleteProhibited`, `clientTransferProhibited`, `clientUpdateProhibited`) are all active.
+
+---
 
 ### Task 2: Web Technology Fingerprinting (`whatweb`)
-- **Objective:** Fingerprint web technologies, CMS engine, and plugins.
-- **Command:**
-  ```bash
-  whatweb -v -a 3 https://www.networkwalks.com
-  ```
-- **Key Findings:** Web server software, **WordPress 7.0.4**, and **WP Download Manager (v3.3.58)** plugin.
-- **Attacker Insight:** Exposes specific CMS/plugin version identifiers that can be correlated with public exploit databases (NVD, Exploit-DB).
+`whatweb` identifies CMS platforms, web server daemons, programming languages, and JavaScript libraries.
 
-### Task 3: Domain Name Resolution (`nslookup`)
-- **Objective:** Resolve domain name to its public IP address via DNS.
-- **Command:**
-  ```bash
-  nslookup networkwalks.com
-  ```
-- **Key Findings:** Resolved IP address: **`192.232.216.135`**.
-- **Attacker Insight:** Pinpoints the host IP address for scope boundary validation, geolocation analysis, and network-level targeting.
+```bash
+# Compare target vs baseline
+whatweb example.com
+whatweb networkwalks.com
+
+# Verbose plugin breakdown
+whatweb -v networkwalks.com
+```
+
+![Figure 3 — WhatWeb scan comparison](screenshots/figure3_whatweb_comparison.png)
+*Figure 3: WhatWeb comparison between example.com (Cloudflare-fronted) and networkwalks.com (Apache + WordPress stack).*
+
+![Figure 4 — Verbose WhatWeb report](screenshots/figure4_whatweb_verbose.png)
+*Figure 4: Verbose WhatWeb report detailing plugins, cookie security, and HTTP attributes.*
+
+- **Key Findings:** Running Apache on IP `192.232.216.135`, **WordPress 7.1**, **WP Download Manager (v3.58)**, Bootstrap 7.1, jQuery 3.7.1, and session cookie `__wpdm_client` with `Secure` and `HttpOnly` attributes.
+
+---
+
+### Task 3: DNS Name Resolution (`nslookup`)
+`nslookup` queries DNS servers to resolve a domain name to its IP addresses.
+
+```bash
+nslookup networkwalks.com
+```
+
+![Figure 5 — nslookup DNS Resolution](screenshots/figure5_nslookup_dns.png)
+*Figure 5: nslookup resolving networkwalks.com to IPv4 address 192.232.216.135 and NAT64 IPv6 address.*
+
+- **Key Findings:** Resolved `networkwalks.com` to IPv4 `192.232.216.135` and associated NAT64 IPv6 address.
+
+---
 
 ### Task 4: HTTP Header & Endpoint Inspection (`curl -I`)
-- **Objective:** Read raw HTTP response headers without loading page body.
-- **Command:**
-  ```bash
-  curl -I https://www.networkwalks.com
-  ```
-- **Key Findings:** Server response headers, Content-Type, and exposed WordPress REST API Link: `<https://networkwalks.com/wp-json/>; rel="https://api.w.org/"`.
-- **Attacker Insight:** Header inspection reveals backend technologies and REST API endpoints that may permit unauthenticated user and post enumeration.
+Sends an HTTP `HEAD` request to inspect response headers without downloading the page body.
+
+```bash
+curl -I https://networkwalks.com
+curl -I https://example.com
+```
+
+![Figure 6 — HTTP Response Headers](screenshots/figure6_curl_http_headers.png)
+*Figure 6: HTTP response headers for networkwalks.com vs example.com.*
+
+- **Key Findings:** Discloses `Server: Apache`, WordPress cache headers (`x-nginx-cache: WordPress`), session cookie `__wpdm_client`, and exposed WordPress REST API Link: `<https://networkwalks.com/wp-json/>; rel="https://api.w.org/"`.
+
+---
 
 ### Task 5: Web Application Firewall Detection (`wafw00f`)
-- **Objective:** Detect whether a Web Application Firewall protects the web server.
-- **Command:**
-  ```bash
-  wafw00f https://www.networkwalks.com
-  ```
-- **Key Findings:** WAF Identified: **ModSecurity (SpiderLabs)**.
-- **Attacker Insight:** Alerts the tester to active web inspection rules, preventing naive attack attempts and highlighting the need for encoding/obfuscation.
+Detects whether a website sits behind a Web Application Firewall (WAF) and identifies the vendor.
 
-### Task 6: DNS Infrastructure Enumeration (`dnsrecon`)
-- **Objective:** Enumerate all DNS records (NS, MX, SPF, TXT, SRV).
-- **Command:**
-  ```bash
-  dnsrecon -d networkwalks.com -t std
-  ```
-- **Key Findings:** Authoritative Name Servers, Mail Exchangers (MX), SPF verification records, and service records.
-- **Attacker Insight:** Maps organization mail servers, cloud tenants, and potential subdomains.
+```bash
+wafw00f https://networkwalks.com
+wafw00f https://example.com
+```
+
+![Figure 7 — WAF Detection with wafw00f](screenshots/figure7_wafw00f_waf_detection.png)
+*Figure 7: wafw00f detecting ModSecurity (SpiderLabs) on networkwalks.com and Cloudflare WAF on example.com.*
+
+- **Key Findings:** `networkwalks.com` is protected by **ModSecurity (SpiderLabs)** WAF; `example.com` is protected by **Cloudflare WAF**.
+
+---
+
+### Task 6: Full DNS Record Enumeration (`dnsrecon`)
+Automates the retrieval of all DNS record types (SOA, NS, MX, A, AAAA, TXT, SPF) in a single pass.
+
+```bash
+dnsrecon -d networkwalks.com -t std
+```
+
+![Figure 8 — dnsrecon standard enumeration](screenshots/figure8_dnsrecon_dns_enumeration.png)
+*Figure 8: dnsrecon output showing SOA, NS, MX, A, AAAA, and TXT SPF records.*
+
+- **Key Findings:** SOA & NS records point to HostGator (`ns6135`/`ns6136`, BIND 9.16.23-RH); MX routes to `mail.networkwalks.com`; TXT records contain SPF policy (`v=spf1 +a +mx +ip4:50.87.144.87 +include:websitewelcome.com ~all`) and Google Search Console verification. DNSSEC is unsigned.
+
+---
+
+## 📊 Findings Summary: Target vs Comparison
+
+| Category | `networkwalks.com` | `example.com` (Comparison) |
+|---|---|---|
+| **Registrar** | GoDaddy.com, LLC | N/A (ICANN reserved) |
+| **Hosting / Name Servers** | HostGator (`ns6135` / `ns6136`) | Cloudflare Edge / Anycast |
+| **Web Server** | Apache (Nginx cache proxy) | Cloudflare (Edge) |
+| **CMS / Stack** | WordPress 7.1, Bootstrap 7.1, jQuery 3.7.1 | Static page, no CMS detected |
+| **Active Plugins** | WP Download Manager (v3.58) | None |
+| **Public IP** | `192.232.216.135` | `172.66.147.243` / `104.20.23.154` |
+| **WAF Detected** | **ModSecurity (SpiderLabs)** | **Cloudflare WAF** |
+| **Notable Cookies** | `__wpdm_client` (`Secure`, `HttpOnly`) | None observed |
+| **DNSSEC** | Unsigned | Not queried |
 
 ---
 
 ## 🔎 W2-PM2: GHDB-based Footprinting Attacks
 
 > **Resource:** [Google Hacking Database (GHDB) on Exploit-DB](https://www.exploit-db.com/google-hacking-database)
-
-Google Dorking utilizes advanced search operators to uncover sensitive data indexed by Google search engines:
 
 | Category | Dork Syntax | Security Significance |
 |---|---|---|
@@ -135,24 +183,16 @@ Google Dorking utilizes advanced search operators to uncover sensitive data inde
 
 ## 🌐 W2-PM3: Maltego-based Footprinting Attacks
 
-- **Overview:** Graph-based Open Source Intelligence (OSINT) and link analysis tool.
-- **Workflow:**
-  1. Initialize new graph and drag **Domain** entity (`networkwalks.com`).
-  2. Run standard transforms: `To DNS Name`, `To IP Address`, `To Nameserver`, `To Mail Server`.
-  3. Expand infrastructure graph to identify shared IP blocks, ASN ownership, and affiliated entities.
+- **Workflow:** Entity link analysis starting from domain `networkwalks.com`, executing transforms to discover DNS names, IP blocks, Netblocks, and organizational email addresses.
 
 ---
 
 ## 🌾 W2-PM4: theHarvester-based Footprinting Attacks
 
-- **Command Syntax:**
-  ```bash
-  theHarvester -d networkwalks.com -b all -l 100
-  ```
-- **OSINT Harvested:**
-  - Public corporate email addresses.
-  - Subdomains and virtual hosts across public search engines.
-  - Employee names, LinkedIn associations, and public IP ranges.
+```bash
+theHarvester -d networkwalks.com -b all -l 100
+```
+- Harvests public corporate emails, employee names, search engine subdomains, and public IP ranges.
 
 ---
 
@@ -163,7 +203,7 @@ Google Dorking utilizes advanced search operators to uncover sensitive data inde
 > - [Lab Practice — Zenmap Network Scanning Guide](https://networkwalks.com/lab-practice-network-scanning-with-zenmap/)
 > - [Authorized Practice Target: scanme.nmap.org](http://scanme.nmap.org/)
 
-### 📖 Nmap Cheatsheet (NetworkWalks Reference)
+### 📖 Nmap Cheatsheet (NetworkWalks Series)
 
 #### 1. Target Selection
 | Switch / Syntax | Example | Description |
@@ -246,24 +286,21 @@ Google Dorking utilizes advanced search operators to uncover sensitive data inde
 
 ---
 
-## 📄 W2-PM-FINAL: Penetration Testing Report
+## 📄 W2-PM-FINAL: Penetration Testing Reports
 
-The formal penetration testing deliverable has been compiled and saved:
+The formal deliverables for Week 2 are available in the [`Reports/`](../Reports/) directory:
 
-👉 **[Read the Full Penetration Testing Report](../Reports/Week2_Pentest_Report.md)**
-
-### Report Highlights:
-- **Liability Disclaimer:** Clear ethical boundaries and authorized testing statement.
-- **Structured Findings Matrix:** 6 categorized findings with risk ratings (Medium / Low).
-- **Remediation Roadmap:** Actionable steps covering banner suppression, REST API protection, WAF tuning, and VLAN segmentation.
+- 📄 **[Week 2 Penetration Testing Report (Markdown)](../Reports/Week2_Pentest_Report.md)**
+- 📥 **[Week 2 Footprinting & Reconnaissance Report (DOCX)](../Reports/Week2_Footprinting_Reconnaissance_Report.docx)**
 
 ---
 
 ## 💡 What I Learned
 
-1. **The Attacker Mindset in Reconnaissance:** High-value data (CMS versions, WAF presence, REST endpoints) can be uncovered purely through passive and low-profile queries.
-2. **Precision Port Scanning:** Understanding when to use stealth SYN scans (`-sS`), UDP scans (`-sU`), and timing profiles (`-T4`) depending on the environment.
-3. **Professional Reporting Standards:** How to translate technical command outputs into executive-level risk assessments and actionable remediation guidance.
+1. **Passive vs Active Reconnaissance:** Passive tools (`whois`, `nslookup`, `dnsrecon`) reveal immense infrastructure intelligence without alerting target IDS systems.
+2. **Web Stack Fingerprinting:** Active tools (`whatweb`, `curl -I`, `wafw00f`) uncover exact software versions, cache proxies, and firewall perimeters.
+3. **Network Discovery & Topology:** Zenmap allows rapid subnet sweep and visual mapping of active devices.
+4. **Professional Documentation:** Translating technical observations into risk matrices, severity levels, and actionable remediations.
 
 ---
 

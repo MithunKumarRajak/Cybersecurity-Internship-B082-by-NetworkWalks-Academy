@@ -28,15 +28,16 @@
 .
 ├── README.md                      <- Root repository overview & progress tracker
 ├── Reports/
-│   ├── README.md                  <- Report index & templates
-│   ├── Week1_Lab_Setup_Report.pdf <- Submitted Week 1 Lab Setup Report (PDF)
-│   └── Week2_Pentest_Report.md    <- Week 2 Pentest Report (Markdown)
+│   ├── README.md                                      <- Report index & templates
+│   ├── Week1_Lab_Setup_Report.pdf                     <- Submitted Week 1 Lab Setup Report (PDF)
+│   ├── Week2_Footprinting_Reconnaissance_Report.docx <- Submitted Week 2 Footprinting Report (DOCX)
+│   └── Week2_Pentest_Report.md                        <- Week 2 Pentest Report (Markdown)
 ├── Resources/
-│   └── README.md                  <- References, downloads & cheat sheets
+│   └── README.md                                      <- References, downloads & cheat sheets
 ├── Week-1-Lab-Setup/
-│   └── README.md                  <- Week 1: Kali Linux 2026.2 + VirtualBox setup
+│   └── README.md                                      <- Week 1: Kali Linux 2026.2 + VirtualBox setup
 └── Week-2-Footprinting-Scanning/
-    └── README.md                  <- Week 2: Reconnaissance, scanning & VAPT
+    └── README.md                                      <- Week 2: Reconnaissance, scanning & VAPT
 ```
 
 > *Note: Weeks 3 and 4 modules will be added upon completion.*
