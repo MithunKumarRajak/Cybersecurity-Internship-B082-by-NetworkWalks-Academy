@@ -39,7 +39,7 @@ Week 2 focuses on the foundational phases of ethical hacking and penetration tes
 | **W2-PM2** | Google Hacking Database (GHDB) | Elective | Google Dorks & search operator reconnaissance | 📚 Documented | [View Section](#-w2-pm2-ghdb-based-footprinting-attacks) |
 | **W2-PM3** | Maltego Reconnaissance | Elective | Graph-based entity link analysis & transforms | 📚 Documented | [View Section](#-w2-pm3-maltego-based-footprinting-attacks) |
 | **W2-PM4** | theHarvester OSINT | Elective | Email, domain, subdomain & IP enumeration | 📚 Documented | [View Section](#-w2-pm4-theharvester-based-footprinting-attacks) |
-| **W2-PM5** | **Zenmap / Nmap Scanning** | **Essential** | Host discovery, port scanning, OS/service detection, topology | ✅ Completed | [View Section](#-w2-pm5-zenmap--nmap-network-scanning-essential) |
+| **W2-PM5** | **Zenmap / Nmap Scanning** | **Essential** | Host discovery, port scanning, OS/service detection, topology | ✅ Completed | [View Section](#-w2-pm5-zenmap--nmap-network-scanning-essential) \| [📥 Zenmap Report](../Reports/Week2_Zenmap_Report.docx) |
 | **W2-PM-FINAL** | **Formal Pentest Report** | **Essential** | Client-ready vulnerability report (`.docx` & `.md`) | ✅ Completed | [📄 Markdown Report](../Reports/Week2_Pentest_Report.md) \| [📥 DOCX Report](../Reports/Week2_Footprinting_Reconnaissance_Report.docx) |
 
 ---
@@ -203,7 +203,8 @@ theHarvester -d networkwalks.com -b all -l 100
 > - [Lab Practice — Zenmap Network Scanning Guide](https://networkwalks.com/lab-practice-network-scanning-with-zenmap/)
 > - [Authorized Practice Target: scanme.nmap.org](http://scanme.nmap.org/)
 
-### 📖 Nmap Cheatsheet (NetworkWalks Series)
+<details>
+<summary><strong>📖 Nmap Cheatsheet (NetworkWalks Series)</strong> — click to expand</summary>
 
 #### 1. Target Selection
 | Switch / Syntax | Example | Description |
@@ -269,6 +270,8 @@ theHarvester -d networkwalks.com -b all -l 100
 | `--spoof-mac` | `nmap --spoof-mac 00:11:22:33:44:55 10.0.0.1` | Spoof MAC address |
 | `--script` | `nmap --script vuln 10.0.0.1` | Execute Nmap Scripting Engine (NSE) scripts |
 
+</details>
+
 ---
 
 ### 🖥️ Local Network Scanning Steps with Zenmap
@@ -292,6 +295,7 @@ The formal deliverables for Week 2 are available in the [`Reports/`](../Reports/
 
 - 📄 **[Week 2 Penetration Testing Report (Markdown)](../Reports/Week2_Pentest_Report.md)**
 - 📥 **[Week 2 Footprinting & Reconnaissance Report (DOCX)](../Reports/Week2_Footprinting_Reconnaissance_Report.docx)**
+- 📥 **[Week 2 Zenmap Scanning Report (DOCX)](../Reports/Week2_Zenmap_Report.docx)**
 
 ---
 

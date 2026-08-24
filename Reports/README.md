@@ -16,6 +16,7 @@ This directory contains formal reports, security findings, and deliverable docum
 |---|---|:---:|:---:|:---:|
 | [Week 1 Lab Setup Report](Week1_Lab_Setup_Report.pdf) | VirtualBox, Kali 2026.2, NAT Network Setup | PDF | 22-Aug-2026 | ✅ Submitted |
 | [Week 2 Footprinting & Recon Report](Week2_Footprinting_Reconnaissance_Report.docx) | 6 Kali Tools, WAF Detection, DNS Enumeration | DOCX | 24-Aug-2026 | ✅ Submitted |
+| [Week 2 Zenmap Scanning Report](Week2_Zenmap_Report.docx) | Local Subnet Scan, Host Discovery, Topology Mapping | DOCX | 24-Aug-2026 | ✅ Submitted |
 | [Week 2 Pentest Report](Week2_Pentest_Report.md) | Footprinting, Scanning & Reconnaissance | Markdown | 24-Aug-2026 | ✅ Completed |
 | Week 4 Full Pentest Report | Complete Red Team Penetration Test | Markdown / PDF | Final Week | ⬜ Upcoming |
 | Week 4 SOC Security Report | Blue Team Wireshark Traffic & Threat Analysis | Markdown / PDF | Final Week | ⬜ Upcoming |
@@ -29,6 +30,7 @@ Reports/
 ├── README.md                                          <- Report directory guide & status index
 ├── Week1_Lab_Setup_Report.pdf                        <- Submitted Week 1 Lab Setup Report (PDF)
 ├── Week2_Footprinting_Reconnaissance_Report.docx     <- Submitted Week 2 Footprinting Report (DOCX)
+├── Week2_Zenmap_Report.docx                          <- Submitted Week 2 Zenmap Scanning Report (DOCX)
 └── Week2_Pentest_Report.md                            <- Week 2 Pentest Report (Markdown)
 ```
 

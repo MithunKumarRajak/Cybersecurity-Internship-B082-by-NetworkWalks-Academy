@@ -202,4 +202,18 @@ theHarvester -d networkwalks.com -b all -l 100
 
 ---
 
+## 🔗 Week Quick Links
+
+| Week | Module | Direct Link |
+|:---:|---|---|
+| **1** | Lab Setup — Kali Linux + VirtualBox | [Week-1 README](../Week-1-Lab-Setup/README.md) |
+| **2** | Footprinting, Scanning & Report Writing | [Week-2 README](../Week-2-Footprinting-Scanning/README.md) |
+| **2** | Pentest Report (Markdown) | [Week2_Pentest_Report.md](../Reports/Week2_Pentest_Report.md) |
+| **2** | Footprinting Report (DOCX) | [Week2_Footprinting_Reconnaissance_Report.docx](../Reports/Week2_Footprinting_Reconnaissance_Report.docx) |
+| **2** | Zenmap Report (DOCX) | [Week2_Zenmap_Report.docx](../Reports/Week2_Zenmap_Report.docx) |
+| **3** | Cracking & Attacking (Upcoming) | [Week-3 README](../Week-3-Cracking-Attacking/README.md) |
+| **4** | Full Pentest + SOC Analysis (Upcoming) | [Week-4 README](../Week-4-Full-Pentest-Project/README.md) |
+
+---
+
 > 📂 [Back to Main README](../README.md)

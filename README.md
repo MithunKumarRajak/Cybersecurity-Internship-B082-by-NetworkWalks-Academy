@@ -3,7 +3,7 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Mithun_Kumar_Rajak-0077b5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mithun-kumar-rajak/)
 [![Program](https://img.shields.io/badge/NetworkWalks-B082_Internship-0a66c2?style=for-the-badge&logo=shield&logoColor=white)](https://www.networkwalks.com)
 [![Week](https://img.shields.io/badge/Current-Week_2-28a745?style=for-the-badge)](Week-2-Footprinting-Scanning/)
-[![Status](https://img.shields.io/badge/Status-In_Progress-f0ad4e?style=for-the-badge)](Week-2-Footprinting-Scanning/)
+[![Status](https://img.shields.io/badge/Status-Week_2_Completed-28a745?style=for-the-badge)](Week-2-Footprinting-Scanning/)
 
 > A 4-week remote cybersecurity internship by **[NetworkWalks Academy](https://www.networkwalks.com)**, guided by CCIE-certified industry experts. This repository documents my hands-on work — from lab setup to full penetration testing.
 
@@ -31,6 +31,7 @@
 │   ├── README.md                                      <- Report index & templates
 │   ├── Week1_Lab_Setup_Report.pdf                     <- Submitted Week 1 Lab Setup Report (PDF)
 │   ├── Week2_Footprinting_Reconnaissance_Report.docx <- Submitted Week 2 Footprinting Report (DOCX)
+│   ├── Week2_Zenmap_Report.docx                       <- Submitted Week 2 Zenmap Scanning Report (DOCX)
 │   └── Week2_Pentest_Report.md                        <- Week 2 Pentest Report (Markdown)
 ├── Resources/
 │   └── README.md                                      <- References, downloads & cheat sheets
@@ -90,8 +91,8 @@
 | **Host Machine** | Windows 11 | Host Network | Host LAN | Hypervisor Host | Active |
 | **Virtual Gateway** | VirtualBox NAT | `10.0.2.1` | `10.0.2.0/24` | Default Gateway | Active |
 | **Kali Linux (Attacker)** | Kali 2026.2 (x64) | `10.0.2.15` | `10.0.2.0/24` | Primary Pentest Machine | ✅ Ready |
-| **Metasploitable 2** | Linux (Vulnerable) | `10.0.2.x` | `10.0.2.0/24` | Red Team Target | ⏳ Week 2+ |
-| **Windows Target** | Windows OS | `10.0.2.x` | `10.0.2.0/24` | Red Team Target | ⏳ Week 2+ |
+| **Metasploitable 2** | Linux (Vulnerable) | `10.0.2.x` | `10.0.2.0/24` | Red Team Target | ✅ Ready (Week 3) |
+| **Windows Target** | Windows OS | `10.0.2.x` | `10.0.2.0/24` | Red Team Target | ✅ Ready (Week 3) |
 
 ---
 
