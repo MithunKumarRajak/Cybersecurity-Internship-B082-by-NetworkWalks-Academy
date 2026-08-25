@@ -211,7 +211,7 @@ theHarvester -d networkwalks.com -b all -l 100
 | **2** | Pentest Report (Markdown) | [Week2_Pentest_Report.md](../Reports/Week2_Pentest_Report.md) |
 | **2** | Footprinting Report (DOCX) | [Week2_Footprinting_Reconnaissance_Report.docx](../Reports/Week2_Footprinting_Reconnaissance_Report.docx) |
 | **2** | Zenmap Report (DOCX) | [Week2_Zenmap_Report.docx](../Reports/Week2_Zenmap_Report.docx) |
-| **3** | Cracking & Attacking — JTR & NW Tools (In Progress) | [Week-3 README](../Week-3-Cracking-Attacking/README.md) |
+| **3** | Cracking & Attacking — JTR & NW Tools (✅ Completed) | [Week-3 README](../Week-3-Cracking-Attacking/README.md) |
 | **4** | Full Pentest + SOC Analysis (Upcoming) | [Week-4 README](../Week-4-Full-Pentest-Project/README.md) |
 
 ---

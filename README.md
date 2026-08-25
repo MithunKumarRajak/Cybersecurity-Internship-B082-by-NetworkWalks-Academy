@@ -2,8 +2,8 @@
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Mithun_Kumar_Rajak-0077b5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mithun-kumar-rajak/)
 [![Program](https://img.shields.io/badge/NetworkWalks-B082_Internship-0a66c2?style=for-the-badge&logo=shield&logoColor=white)](https://www.networkwalks.com)
-[![Week](https://img.shields.io/badge/Current-Week_2-28a745?style=for-the-badge)](Week-2-Footprinting-Scanning/)
-[![Status](https://img.shields.io/badge/Status-Week_2_Completed-28a745?style=for-the-badge)](Week-2-Footprinting-Scanning/)
+[![Week](https://img.shields.io/badge/Current-Week_3-0a66c2?style=for-the-badge)](Week-3-Cracking-Attacking/)
+[![Status](https://img.shields.io/badge/Status-Week_3_Completed-28a745?style=for-the-badge)](Week-3-Cracking-Attacking/)
 
 > A 4-week remote cybersecurity internship by **[NetworkWalks Academy](https://www.networkwalks.com)**, guided by CCIE-certified industry experts. This repository documents my hands-on work â€” from lab setup to full penetration testing.
 
@@ -51,7 +51,7 @@
 |:---:|---|:---:|:---:|---|
 | **1** | [Lab Setup â€” Kali Linux 2026.2 + VirtualBox](Week-1-Lab-Setup/) | ðŸ”§ Essentials | âœ… Completed | [ðŸ“„ Week 1 PDF Report](Reports/Week1_Lab_Setup_Report.pdf) |
 | **2** | [Footprinting, Scanning & Report Writing](Week-2-Footprinting-Scanning/) | ðŸ”´ Red Team | âœ… Completed | [ðŸ“„ Week 2 Pentest Report](Reports/Week2_Pentest_Report.md) |
-| **3** | [Cracking & Attacking (Metasploit, JTR)](Week-3-Cracking-Attacking/) | ðŸ”´ Red Team | â¬œ Upcoming | â¬œ Upcoming |
+| **3** | [Cracking & Attacking — JTR & NW Tools](Week-3-Cracking-Attacking/) | 🔴 Red Team | ✅ Completed | [📥 JTR Report](Reports/Week3_Password_Cracking_JTR_Report.docx) \| [📥 NW Tools Report](Reports/Week3_Password_Cracking_NetworkWalks_Tools_Report.docx) |
 | **4** | [Full Pentest + Wireshark SOC Analysis](Week-4-Full-Pentest-Project/) | ðŸ”´ðŸ”µ Red + Blue | â¬œ Upcoming | â¬œ Upcoming |
 
 ---
@@ -133,5 +133,6 @@
   <strong>NetworkWalks Academy</strong> Â· Batch B082 Â· August 2026<br>
   <em>Instructor: Waqas Karim â€” CCIE</em>
 </p>
+
 
 
