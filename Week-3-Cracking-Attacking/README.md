@@ -56,18 +56,6 @@ Week 3 focuses on **Phase 3 of the ethical hacking lifecycle — Gaining Access*
 
 ---
 
-## 🎯 Lab Targets
-
-> ⚠️ **All activities performed strictly against authorized lab targets within `10.0.2.0/24`.**
-
-| Target | IP | OS | Vulnerable Services |
-|---|---|---|---|
-| **Kali Linux (Local)** | `10.0.2.15` | Kali 2026.2 | Local `/etc/shadow` hash extraction |
-| **Metasploitable 2** | `10.0.2.x` | Ubuntu Linux (Vulnerable) | FTP, SSH, Telnet, SMB, HTTP |
-| **Mediroza Hospital Portal** | Web App (CTF) | Authorized Lab Target | Patient Portal login (Optional) |
-
----
-
 ## 🔓 W3-PM1: Password Cracking with John The Ripper (JTR)
 
 > **Resource:** [John The Ripper Official](https://www.openwall.com/john/)
@@ -239,14 +227,6 @@ A guided web application credential attack against the **Mediroza Hospital patie
 4. **Privilege Escalation** — Test for horizontal/vertical access control flaws
 
 <!-- Add screenshots, captured flags, and findings when completed -->
-
----
-
-## 🐞 Troubleshooting Log
-
-| Issue Encountered | Root Cause | Resolution |
-|---|---|---|
-| | | |
 
 ---
 
