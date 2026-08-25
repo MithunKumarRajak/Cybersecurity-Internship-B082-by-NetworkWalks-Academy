@@ -1,4 +1,4 @@
-﻿# ⚔️ Week 3 — Password Cracking & Attacking
+# ⚔️ Week 3 — Password Cracking & Attacking
 
 > **NetworkWalks Academy | Batch B082 | August 2026**
 >
@@ -35,8 +35,8 @@ Week 3 focuses on **Phase 3 of the ethical hacking lifecycle — Gaining Access*
 
 | Module ID | Module Name | Category | Scope | Status | Deliverables |
 |---|---|:---:|---|:---:|---|
-| **W3-PM1** | **Password Cracking with JTR** | **Essential** | Hash cracking using John The Ripper (`/etc/shadow`, wordlists, rules) | 🔄 In Progress | [View Section](#-w3-pm1-password-cracking-with-john-the-ripper-jtr) |
-| **W3-PM2** | **Password Cracking with NW Tools** | **Essential** | NetworkWalks-guided cracking methodology & custom toolchain | 🔄 In Progress | [View Section](#-w3-pm2-password-cracking-with-nw-tools) |
+| **W3-PM1** | **Password Cracking with JTR** | **Essential** | Hash cracking using John The Ripper (`/etc/shadow`, wordlists, rules) | ✅ Completed | [View Section](#-w3-pm1-password-cracking-with-john-the-ripper-jtr) \| [📥 JTR Report](../Reports/Week3_Password_Cracking_JTR_Report.docx) |
+| **W3-PM2** | **Password Cracking with NW Tools** | **Essential** | NetworkWalks-guided cracking methodology & custom toolchain | ✅ Completed | [View Section](#-w3-pm2-password-cracking-with-nw-tools) \| [📥 NW Tools Report](../Reports/Week3_Password_Cracking_NetworkWalks_Tools_Report.docx) |
 | **W3-OPTIONAL1** | AI-Assisted JTR Lab (Claude & Hexstrike MCP) | Optional | AI-augmented password cracking with Claude Desktop + MCP Server | ⬜ Optional | [View Section](#-w3-optional1-ai-assisted-jtr-lab-claude--hexstrike-mcp) |
 | **W3-OPTIONAL2** | Mediroza Hospital Portal Hacking | Optional | Authorized patient portal CTF-style credential attack simulation | ⬜ Optional | [View Section](#-w3-optional2-mediroza-hospital-patient-portal-hacking) |
 
@@ -250,6 +250,15 @@ A guided web application credential attack against the **Mediroza Hospital patie
 
 ---
 
+## 📄 W3-PM-FINAL: Password Cracking Reports
+
+The formal deliverables for Week 3 are available in the [`Reports/`](../Reports/) directory:
+
+- 📥 **[Week 3 JTR Password Cracking Report (DOCX)](../Reports/Week3_Password_Cracking_JTR_Report.docx)** — W3-PM1
+- 📥 **[Week 3 NW Tools Password Cracking Report (DOCX)](../Reports/Week3_Password_Cracking_NetworkWalks_Tools_Report.docx)** — W3-PM2
+
+---
+
 ## 💡 What I Learned
 
 1. **Hash Identification is Critical:** The cracking strategy depends entirely on the algorithm — always identify the hash type first.
@@ -266,5 +275,3 @@ A guided web application credential attack against the **Mediroza Hospital patie
 ---
 
 > 📂 [Back to Main README](../README.md) | 📋 [Reports](../Reports/) | 🔗 [Resources](../Resources/README.md)
-
-

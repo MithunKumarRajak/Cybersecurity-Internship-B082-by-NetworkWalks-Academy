@@ -1,5 +1,4 @@
-﻿# Upcoming Weeks (to be added upon completion)
-Week-3-Cracking-Attacking/
+# Upcoming Weeks (to be added upon completion)
 Week-4-Full-Pentest-Project/
 
 # OS files
@@ -13,7 +12,7 @@ desktop.ini
 *.swp
 *~
 
-# Sensitive data â€” NEVER commit
+# Sensitive data — NEVER commit
 *.pcap
 *.cap
 passwords.txt
@@ -39,4 +38,3 @@ credentials.txt
 *.log
 *.tmp
 *.bak
-
