@@ -1,37 +1,37 @@
-# 🔗 Resources & Lab Reference Guide
+﻿# ðŸ”— Resources & Lab Reference Guide
 
 > **NetworkWalks Academy | Batch B082 | August 2026**
 
 ---
 
-## 📋 Overview
+## ðŸ“‹ Overview
 
 A practical reference guide containing verified software download sources, official documentation, web security databases, and command cheat sheets directly practiced in the **Cybersecurity & Ethical Hacking Internship**.
 
 ---
 
-## 🛠️ Lab Software & Downloads
+## ðŸ› ï¸ Lab Software & Downloads
 
 ### Hypervisor & Utilities
 
 | Software | Version / Purpose | Official Source |
 |---|---|---|
-| 🧰 **Oracle VirtualBox** | Type-2 Hypervisor for isolated lab environment | [VirtualBox Downloads](https://virtualbox.org/wiki/Downloads) |
-| 📦 **7-Zip** | Archive utility for `.7z` VM image extraction | [7-Zip Official](https://7-zip.org/download.html) |
+| ðŸ§° **Oracle VirtualBox** | Type-2 Hypervisor for isolated lab environment | [VirtualBox Downloads](https://virtualbox.org/wiki/Downloads) |
+| ðŸ“¦ **7-Zip** | Archive utility for `.7z` VM image extraction | [7-Zip Official](https://7-zip.org/download.html) |
 
 ### Operating System & Security Tools
 
 | System / Tool | Role | Official Source |
 |---|---|---|
-| 🐉 **Kali Linux 2026.2** | Attacker VM (Pre-built VirtualBox Image) | [Kali Linux Get-Kali](https://kali.org/get-kali) |
-| 👁️ **Nmap & Zenmap** | Free Security Scanner & Network Exploration Tool | [Nmap Official Downloads](https://nmap.org/download.html) |
-| 🌐 **ScanMe (Nmap)** | Authorized Public Practice Target for Port Scanning | [scanme.nmap.org](http://scanme.nmap.org/) |
-| 🔍 **Google Hacking Database** | OSINT Dorking & Google Reconnaissance Repository | [GHDB on Exploit-DB](https://www.exploit-db.com/google-hacking-database) |
-| 📚 **Zenmap Lab Tutorial** | NetworkWalks Academy Zenmap Scanning Practical | [NetworkWalks Zenmap Guide](https://networkwalks.com/lab-practice-network-scanning-with-zenmap/) |
+| ðŸ‰ **Kali Linux 2026.2** | Attacker VM (Pre-built VirtualBox Image) | [Kali Linux Get-Kali](https://kali.org/get-kali) |
+| ðŸ‘ï¸ **Nmap & Zenmap** | Free Security Scanner & Network Exploration Tool | [Nmap Official Downloads](https://nmap.org/download.html) |
+| ðŸŒ **ScanMe (Nmap)** | Authorized Public Practice Target for Port Scanning | [scanme.nmap.org](http://scanme.nmap.org/) |
+| ðŸ” **Google Hacking Database** | OSINT Dorking & Google Reconnaissance Repository | [GHDB on Exploit-DB](https://www.exploit-db.com/google-hacking-database) |
+| ðŸ“š **Zenmap Lab Tutorial** | NetworkWalks Academy Zenmap Scanning Practical | [NetworkWalks Zenmap Guide](https://networkwalks.com/lab-practice-network-scanning-with-zenmap/) |
 
 ---
 
-## 📖 Nmap Cheatsheet & Command Reference (NetworkWalks Series)
+## ðŸ“– Nmap Cheatsheet & Command Reference (NetworkWalks Series)
 
 ### 1. Target Selection Syntax
 ```bash
@@ -156,7 +156,7 @@ nmap --script vuln 10.0.0.1
 
 ---
 
-## 🔎 Footprinting & OSINT Quick Reference
+## ðŸ”Ž Footprinting & OSINT Quick Reference
 
 ```bash
 # Query domain registration details
@@ -183,7 +183,7 @@ theHarvester -d networkwalks.com -b all -l 100
 
 ---
 
-## 📚 Official Documentation & Manuals
+## ðŸ“š Official Documentation & Manuals
 
 | Resource | Scope | Link |
 |---|---|---|
@@ -194,26 +194,27 @@ theHarvester -d networkwalks.com -b all -l 100
 
 ---
 
-## 🏛️ Program References
+## ðŸ›ï¸ Program References
 
-- 🌐 **NetworkWalks Academy:** [networkwalks.com](https://www.networkwalks.com)
-- 🏢 **NetworkWalks LinkedIn:** [Company Page](https://linkedin.com/company/networkwalks/)
-- 👨‍🏫 **Lead Instructor:** [Waqas Karim (CCIE)](https://linkedin.com/in/waqaskarim/)
+- ðŸŒ **NetworkWalks Academy:** [networkwalks.com](https://www.networkwalks.com)
+- ðŸ¢ **NetworkWalks LinkedIn:** [Company Page](https://linkedin.com/company/networkwalks/)
+- ðŸ‘¨â€ðŸ« **Lead Instructor:** [Waqas Karim (CCIE)](https://linkedin.com/in/waqaskarim/)
 
 ---
 
-## 🔗 Week Quick Links
+## ðŸ”— Week Quick Links
 
 | Week | Module | Direct Link |
 |:---:|---|---|
-| **1** | Lab Setup — Kali Linux + VirtualBox | [Week-1 README](../Week-1-Lab-Setup/README.md) |
+| **1** | Lab Setup â€” Kali Linux + VirtualBox | [Week-1 README](../Week-1-Lab-Setup/README.md) |
 | **2** | Footprinting, Scanning & Report Writing | [Week-2 README](../Week-2-Footprinting-Scanning/README.md) |
 | **2** | Pentest Report (Markdown) | [Week2_Pentest_Report.md](../Reports/Week2_Pentest_Report.md) |
 | **2** | Footprinting Report (DOCX) | [Week2_Footprinting_Reconnaissance_Report.docx](../Reports/Week2_Footprinting_Reconnaissance_Report.docx) |
 | **2** | Zenmap Report (DOCX) | [Week2_Zenmap_Report.docx](../Reports/Week2_Zenmap_Report.docx) |
-| **3** | Cracking & Attacking (Upcoming) | [Week-3 README](../Week-3-Cracking-Attacking/README.md) |
+| **3** | Cracking & Attacking — JTR & NW Tools (In Progress) | [Week-3 README](../Week-3-Cracking-Attacking/README.md) |
 | **4** | Full Pentest + SOC Analysis (Upcoming) | [Week-4 README](../Week-4-Full-Pentest-Project/README.md) |
 
 ---
 
-> 📂 [Back to Main README](../README.md)
+> ðŸ“‚ [Back to Main README](../README.md)
+

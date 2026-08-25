@@ -1,20 +1,20 @@
-# 🛡️ Cybersecurity & Ethical Hacking — Internship B082
+﻿# ðŸ›¡ï¸ Cybersecurity & Ethical Hacking â€” Internship B082
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Mithun_Kumar_Rajak-0077b5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/mithun-kumar-rajak/)
 [![Program](https://img.shields.io/badge/NetworkWalks-B082_Internship-0a66c2?style=for-the-badge&logo=shield&logoColor=white)](https://www.networkwalks.com)
 [![Week](https://img.shields.io/badge/Current-Week_2-28a745?style=for-the-badge)](Week-2-Footprinting-Scanning/)
 [![Status](https://img.shields.io/badge/Status-Week_2_Completed-28a745?style=for-the-badge)](Week-2-Footprinting-Scanning/)
 
-> A 4-week remote cybersecurity internship by **[NetworkWalks Academy](https://www.networkwalks.com)**, guided by CCIE-certified industry experts. This repository documents my hands-on work — from lab setup to full penetration testing.
+> A 4-week remote cybersecurity internship by **[NetworkWalks Academy](https://www.networkwalks.com)**, guided by CCIE-certified industry experts. This repository documents my hands-on work â€” from lab setup to full penetration testing.
 
 ---
 
-## 📌 Program at a Glance
+## ðŸ“Œ Program at a Glance
 
 | Field | Detail |
 |---|---|
 | **Intern** | [Mithun Kumar Rajak](https://www.linkedin.com/in/mithun-kumar-rajak/) |
-| **Batch** | B082 — August 2026 |
+| **Batch** | B082 â€” August 2026 |
 | **Duration** | 4 Weeks |
 | **Mode** | 100% Remote + Weekly LIVE Zoom Sessions |
 | **Instructor** | Waqas Karim (CCIE) |
@@ -22,41 +22,41 @@
 
 ---
 
-## 📂 Repository Structure
+## ðŸ“‚ Repository Structure
 
 ```
 .
-├── README.md                      <- Root repository overview & progress tracker
-├── Reports/
-│   ├── README.md                                      <- Report index & templates
-│   ├── Week1_Lab_Setup_Report.pdf                     <- Submitted Week 1 Lab Setup Report (PDF)
-│   ├── Week2_Footprinting_Reconnaissance_Report.docx <- Submitted Week 2 Footprinting Report (DOCX)
-│   ├── Week2_Zenmap_Report.docx                       <- Submitted Week 2 Zenmap Scanning Report (DOCX)
-│   └── Week2_Pentest_Report.md                        <- Week 2 Pentest Report (Markdown)
-├── Resources/
-│   └── README.md                                      <- References, downloads & cheat sheets
-├── Week-1-Lab-Setup/
-│   └── README.md                                      <- Week 1: Kali Linux 2026.2 + VirtualBox setup
-└── Week-2-Footprinting-Scanning/
-    └── README.md                                      <- Week 2: Reconnaissance, scanning & VAPT
+â”œâ”€â”€ README.md                      <- Root repository overview & progress tracker
+â”œâ”€â”€ Reports/
+â”‚   â”œâ”€â”€ README.md                                      <- Report index & templates
+â”‚   â”œâ”€â”€ Week1_Lab_Setup_Report.pdf                     <- Submitted Week 1 Lab Setup Report (PDF)
+â”‚   â”œâ”€â”€ Week2_Footprinting_Reconnaissance_Report.docx <- Submitted Week 2 Footprinting Report (DOCX)
+â”‚   â”œâ”€â”€ Week2_Zenmap_Report.docx                       <- Submitted Week 2 Zenmap Scanning Report (DOCX)
+â”‚   â””â”€â”€ Week2_Pentest_Report.md                        <- Week 2 Pentest Report (Markdown)
+â”œâ”€â”€ Resources/
+â”‚   â””â”€â”€ README.md                                      <- References, downloads & cheat sheets
+â”œâ”€â”€ Week-1-Lab-Setup/
+â”‚   â””â”€â”€ README.md                                      <- Week 1: Kali Linux 2026.2 + VirtualBox setup
+â””â”€â”€ Week-2-Footprinting-Scanning/
+    â””â”€â”€ README.md                                      <- Week 2: Reconnaissance, scanning & VAPT
 ```
 
-> *Note: Weeks 3 and 4 modules will be added upon completion.*
+> *Note: Week 4 modules will be added upon completion.*
 
 ---
 
-## 📆 Progress Tracker
+## ðŸ“† Progress Tracker
 
 | Week | Project | Track | Status | Report / Deliverable |
 |:---:|---|:---:|:---:|---|
-| **1** | [Lab Setup — Kali Linux 2026.2 + VirtualBox](Week-1-Lab-Setup/) | 🔧 Essentials | ✅ Completed | [📄 Week 1 PDF Report](Reports/Week1_Lab_Setup_Report.pdf) |
-| **2** | [Footprinting, Scanning & Report Writing](Week-2-Footprinting-Scanning/) | 🔴 Red Team | ✅ Completed | [📄 Week 2 Pentest Report](Reports/Week2_Pentest_Report.md) |
-| **3** | [Cracking & Attacking (Metasploit, JTR)](Week-3-Cracking-Attacking/) | 🔴 Red Team | ⬜ Upcoming | ⬜ Upcoming |
-| **4** | [Full Pentest + Wireshark SOC Analysis](Week-4-Full-Pentest-Project/) | 🔴🔵 Red + Blue | ⬜ Upcoming | ⬜ Upcoming |
+| **1** | [Lab Setup â€” Kali Linux 2026.2 + VirtualBox](Week-1-Lab-Setup/) | ðŸ”§ Essentials | âœ… Completed | [ðŸ“„ Week 1 PDF Report](Reports/Week1_Lab_Setup_Report.pdf) |
+| **2** | [Footprinting, Scanning & Report Writing](Week-2-Footprinting-Scanning/) | ðŸ”´ Red Team | âœ… Completed | [ðŸ“„ Week 2 Pentest Report](Reports/Week2_Pentest_Report.md) |
+| **3** | [Cracking & Attacking (Metasploit, JTR)](Week-3-Cracking-Attacking/) | ðŸ”´ Red Team | â¬œ Upcoming | â¬œ Upcoming |
+| **4** | [Full Pentest + Wireshark SOC Analysis](Week-4-Full-Pentest-Project/) | ðŸ”´ðŸ”µ Red + Blue | â¬œ Upcoming | â¬œ Upcoming |
 
 ---
 
-## 🖥️ Lab Architecture & Network Topology
+## ðŸ–¥ï¸ Lab Architecture & Network Topology
 
 ```
 +-----------------------------------------------------------------------+
@@ -90,13 +90,13 @@
 |---|---|---|---|---|:---:|
 | **Host Machine** | Windows 11 | Host Network | Host LAN | Hypervisor Host | Active |
 | **Virtual Gateway** | VirtualBox NAT | `10.0.2.1` | `10.0.2.0/24` | Default Gateway | Active |
-| **Kali Linux (Attacker)** | Kali 2026.2 (x64) | `10.0.2.15` | `10.0.2.0/24` | Primary Pentest Machine | ✅ Ready |
-| **Metasploitable 2** | Linux (Vulnerable) | `10.0.2.x` | `10.0.2.0/24` | Red Team Target | ✅ Ready (Week 3) |
-| **Windows Target** | Windows OS | `10.0.2.x` | `10.0.2.0/24` | Red Team Target | ✅ Ready (Week 3) |
+| **Kali Linux (Attacker)** | Kali 2026.2 (x64) | `10.0.2.15` | `10.0.2.0/24` | Primary Pentest Machine | âœ… Ready |
+| **Metasploitable 2** | Linux (Vulnerable) | `10.0.2.x` | `10.0.2.0/24` | Red Team Target | âœ… Ready (Week 3) |
+| **Windows Target** | Windows OS | `10.0.2.x` | `10.0.2.0/24` | Red Team Target | âœ… Ready (Week 3) |
 
 ---
 
-## 🛠️ Tools & Technologies
+## ðŸ› ï¸ Tools & Technologies
 
 | Category | Tools | Applied In |
 |---|---|---|
@@ -110,7 +110,7 @@
 
 ---
 
-## ⚖️ Disclaimer
+## âš–ï¸ Disclaimer
 
 > **All work in this repository is strictly for educational and authorized security testing purposes.**
 > Testing is performed exclusively on **owned lab machines** within an isolated virtual environment (`10.0.2.0/24`).
@@ -118,7 +118,7 @@
 
 ---
 
-## 🔗 Quick Links
+## ðŸ”— Quick Links
 
 | Resource | Link |
 |---|---|
@@ -130,6 +130,8 @@
 ---
 
 <p align="center">
-  <strong>NetworkWalks Academy</strong> · Batch B082 · August 2026<br>
-  <em>Instructor: Waqas Karim — CCIE</em>
+  <strong>NetworkWalks Academy</strong> Â· Batch B082 Â· August 2026<br>
+  <em>Instructor: Waqas Karim â€” CCIE</em>
 </p>
+
+
