@@ -10,18 +10,18 @@ This directory contains formal reports, security findings, and deliverable docum
 
 ---
 
-## 📂 Submitted & Upcoming Reports
+## 📂 Submitted & Active Deliverables Registry
 
-| Report Title | Module / Focus | Format | Submission Date | Status |
-|---|---|:---:|:---:|:---:|
-| [Week 1 Lab Setup Report](Week1_Lab_Setup_Report.pdf) | VirtualBox, Kali 2026.2, NAT Network Setup | PDF | 22-Aug-2026 | ✅ Submitted |
-| [Week 2 Footprinting & Recon Report](Week2_Footprinting_Reconnaissance_Report.docx) | 6 Kali Tools, WAF Detection, DNS Enumeration | DOCX | 24-Aug-2026 | ✅ Submitted |
-| [Week 2 Zenmap Scanning Report](Week2_Zenmap_Report.docx) | Local Subnet Scan, Host Discovery, Topology Mapping | DOCX | 24-Aug-2026 | ✅ Submitted |
-| [Week 2 Pentest Report](Week2_Pentest_Report.md) | Footprinting, Scanning & Reconnaissance | Markdown | 24-Aug-2026 | ✅ Completed |
-| [Week 3 JTR Password Cracking Report](Week3_Password_Cracking_JTR_Report.docx) | W3-PM1: Hash extraction, JTR dictionary, rule-based & brute-force attacks | DOCX | 28-Aug-2026 | ✅ Submitted |
-| [Week 3 NW Tools Password Cracking Report](Week3_Password_Cracking_NetworkWalks_Tools_Report.docx) | W3-PM2: Hashcat, Hydra, hashid — NetworkWalks cracking methodology | DOCX | 28-Aug-2026 | ✅ Submitted |
-| Week 4 Full Pentest Report | Complete Red Team Penetration Test | Markdown / PDF | Final Week | ⬜ Upcoming |
-| Week 4 SOC Security Report | Blue Team Wireshark Traffic & Threat Analysis | Markdown / PDF | Final Week | ⬜ Upcoming |
+| Report Title | Module / Focus | Target / Client | Format | Submission Date | Status |
+|---|---|---|:---:|:---:|:---:|
+| [Week 1 Lab Setup Report](Week1_Lab_Setup_Report.pdf) | VirtualBox, Kali 2026.2, NAT Network Setup | Local Lab (`10.0.2.0/24`) | PDF | 22-Aug-2026 | ✅ Submitted |
+| [Week 2 Footprinting & Recon Report](Week2_Footprinting_Reconnaissance_Report.docx) | 6 Kali Tools, WAF Detection, DNS Enumeration | networkwalks.com | DOCX | 24-Aug-2026 | ✅ Submitted |
+| [Week 2 Zenmap Scanning Report](Week2_Zenmap_Report.docx) | Local Subnet Scan, Host Discovery, Topology Mapping | Local Subnet (`10.0.2.0/24`) | DOCX | 24-Aug-2026 | ✅ Submitted |
+| [Week 2 Pentest Report](Week2_Pentest_Report.md) | Footprinting, Scanning & Reconnaissance | networkwalks.com | Markdown | 24-Aug-2026 | ✅ Completed |
+| [Week 3 JTR Password Cracking Report](Week3_Password_Cracking_JTR_Report.docx) | W3-PM1: Hash extraction, JTR dictionary, rule-based & brute-force attacks | Local hashes & archives | DOCX | 28-Aug-2026 | ✅ Submitted |
+| [Week 3 NW Tools Password Cracking Report](Week3_Password_Cracking_NetworkWalks_Tools_Report.docx) | W3-PM2: Hashcat, Hydra, hashid — NetworkWalks cracking methodology | Local hashes & services | DOCX | 28-Aug-2026 | ✅ Submitted |
+| **Week 4 Capstone Pentest Report** | Black-box VAPT: M1 (Patient PDFs), M2 (PDF Cracking), M3 (Salaries & Shareholders), M4 (Remediation) | **Mediroza General Hospital** (`medirozahospital.com`) | Markdown / DOCX | Final Week | 🔄 In Progress |
+| **Week 4 SOC Security Report** | Blue Team Wireshark Traffic & Threat Detection Analysis | Lab & Target Traffic | Markdown / PDF | Final Week | 🔄 In Progress |
 
 ---
 
@@ -64,20 +64,33 @@ Reports/
 6. **Key Learnings:** Password policy insights and defensive recommendations
 7. **Evidence:** Screenshots of tool output and cracked passwords
 
-### 3. SOC Security Report Structure (Week 4 Focus)
+### 3. Capstone Pentest Report Structure — Mediroza General Hospital (Week 4 Standard)
+1. **Executive Summary:** High-level risk score, business & ePHI exposure summary, Board of Directors risk matrix
+2. **Engagement Details & Authorization:**
+   - *Client:* Mediroza General Hospital (`https://medirozahospital.com`)
+   - *Type:* Black-box Penetration Testing (3 Days duration)
+   - *Rules of Engagement:* No DoS, No social engineering, Scope limited strictly to target domain
+3. **Technical Milestones & Vulnerability Findings:**
+   - *Milestone 1 (Initial Access):* Insecure endpoints, IDOR/BOLA, extraction of 3 confidential patient PDF lab reports
+   - *Milestone 2 (Data Extraction):* `pdf2john` extraction, dictionary & rule cracking of all 3 encrypted PDF files
+   - *Milestone 3 (Sensitive Asset Attack):* Exposure of staff salaries and corporate shareholder registry
+   - *Milestone 4 (Pentest Report & Defense Blueprint):* CVSS v3.1 scoring, HIPAA technical safeguard compliance mapping
+4. **Remediation Roadmap:** Tactical quick wins and strategic infrastructure defense (MFA, AES-256 PDF encryption, WAF tuning, RBAC)
+
+### 4. SOC Security Report Structure (Week 4 Focus)
 1. **Executive Overview:** Scope of capture & threat summary
-2. **Capture Methodology:** Interfaces, duration, packet count, filters
+2. **Capture Methodology:** Interfaces, duration, packet count, display filters
 3. **Traffic Profile:** Protocol distribution (TCP, UDP, HTTP, DNS, ARP)
 4. **Security Findings:** Anomalous flows, suspicious payloads, IOCs
-5. **Defense Recommendations:** Firewall rules, detection signatures
-6. **Appendix:** Raw pcap metadata & filter references
+5. **Defense Recommendations:** Snort/Suricata signatures, SIEM correlation rules
+6. **Appendix:** Raw PCAP metadata & filter references
 
 ---
 
 ## ⚠️ Compliance & Data Sanitization
 
-- 🔒 **Sanitized Data:** All public-facing reports strictly use sanitized / private RFC 1918 addresses (`10.0.2.0/24` / `10.0.0.0/24`).
-- 🛡️ **Educational Scope:** No confidential credentials or production data are stored.
+- 🔒 **Sanitized Data:** All public-facing reports strictly use sanitized / private RFC 1918 addresses (`10.0.2.0/24`) and authorized target domains.
+- 🛡️ **Educational Scope:** No live patient personal identifiers or actual financial accounts are stored.
 
 ---
 

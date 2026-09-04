@@ -1,4 +1,4 @@
-# 🔗 Resources & Lab Reference Guide
+# 📚 Resources, References & Cheat Sheets
 
 > **NetworkWalks Academy | Batch B082 | August 2026**
 
@@ -183,6 +183,30 @@ theHarvester -d networkwalks.com -b all -l 100
 
 ---
 
+## 🔐 Password Cracking & PDF Extraction Quick Reference
+
+```bash
+# Extract hash from encrypted PDF document
+pdf2john patient_report.pdf > pdf.hash
+
+# Crack PDF hash with John the Ripper using wordlist
+john --wordlist=/usr/share/wordlists/rockyou.txt pdf.hash
+
+# Crack PDF hash using wordlist rules
+john --wordlist=/usr/share/wordlists/rockyou.txt --rules=Jumbo pdf.hash
+
+# Display cracked passwords from John database
+john --show pdf.hash
+
+# GPU-accelerated PDF hash cracking with Hashcat
+# Mode 10500: PDF 1.4 - 1.6 (Acrobat 5 - 8)
+# Mode 10600: PDF 1.7 Level 3 (Acrobat 9)
+# Mode 10700: PDF 1.7 Level 8 (Acrobat X - XI)
+hashcat -m 10500 -a 0 pdf.hash /usr/share/wordlists/rockyou.txt
+```
+
+---
+
 ## 📚 Official Documentation & Manuals
 
 | Resource | Scope | Link |
@@ -191,6 +215,8 @@ theHarvester -d networkwalks.com -b all -l 100
 | **Nmap Reference Guide** | Official command-line flags, scan types & NSE scripts | [nmap.org/book/man.html](https://nmap.org/book/man.html) |
 | **Exploit-DB GHDB** | Verified Google Dorks and OSINT patterns | [exploit-db.com/ghdb](https://www.exploit-db.com/google-hacking-database) |
 | **Oracle VirtualBox User Manual** | Networking modes (NAT vs NAT Network), snapshot management | [virtualbox.org/manual](https://www.virtualbox.org/manual/) |
+| **OWASP Top 10 Web Security Risks** | Standard awareness document for developers and security professionals | [owasp.org/Top10](https://owasp.org/www-project-top-ten/) |
+| **HIPAA Security Rule Standards** | National standards for the protection of Electronic Protected Health Information (ePHI) | [hhs.gov/hipaa](https://www.hhs.gov/hipaa/for-professionals/security/index.html) |
 
 ---
 
@@ -204,32 +230,12 @@ theHarvester -d networkwalks.com -b all -l 100
 
 ## 🔗 Week Quick Links
 
-| Week | Module | Direct Link |
-|:---:|---|---|
-| **1** | Lab Setup — Kali Linux + VirtualBox | [Week-1 README](../Week-1-Lab-Setup/README.md) |
-| **2** | Footprinting, Scanning & Report Writing | [Week-2 README](../Week-2-Footprinting-Scanning/README.md) |
-| **2** | Pentest Report (Markdown) | [Week2_Pentest_Report.md](../Reports/Week2_Pentest_Report.md) |
-| **2** | Footprinting Report (DOCX) | [Week2_Footprinting_Reconnaissance_Report.docx](../Reports/Week2_Footprinting_Reconnaissance_Report.docx) |
-| **2** | Zenmap Report (DOCX) | [Week2_Zenmap_Report.docx](../Reports/Week2_Zenmap_Report.docx) |
-| **3** | Cracking & Attacking (Upcoming) | [Week-3 README](../Week-3-Cracking-Attacking/README.md) |
-| **4** | Full Pentest + SOC Analysis (Upcoming) | [Week-4 README](../Week-4-Full-Pentest-Project/README.md) |
-
----
-
-
-## 🔗 Week Quick Links
-
-| Week | Module | Direct Link |
-|:---:|---|---|
-| **1** | Lab Setup — Kali Linux + VirtualBox | [Week-1 README](../Week-1-Lab-Setup/README.md) |
-| **2** | Footprinting, Scanning & Report Writing | [Week-2 README](../Week-2-Footprinting-Scanning/README.md) |
-| **2** | Pentest Report (Markdown) | [Week2_Pentest_Report.md](../Reports/Week2_Pentest_Report.md) |
-| **2** | Footprinting Report (DOCX) | [Week2_Footprinting_Reconnaissance_Report.docx](../Reports/Week2_Footprinting_Reconnaissance_Report.docx) |
-| **2** | Zenmap Report (DOCX) | [Week2_Zenmap_Report.docx](../Reports/Week2_Zenmap_Report.docx) |
-| **3** | Cracking & Attacking — JTR & NW Tools (✅ Completed) | [Week-3 README](../Week-3-Cracking-Attacking/README.md) |
-| **3** | JTR Report (DOCX) | [Week3_Password_Cracking_JTR_Report.docx](../Reports/Week3_Password_Cracking_JTR_Report.docx) |
-| **3** | NW Tools Report (DOCX) | [Week3_Password_Cracking_NetworkWalks_Tools_Report.docx](../Reports/Week3_Password_Cracking_NetworkWalks_Tools_Report.docx) |
-| **4** | Full Pentest + SOC Analysis (Upcoming) | [Week-4 README](../Week-4-Full-Pentest-Project/README.md) |
+| Week | Module | Direct Link | Status |
+|:---:|---|---|:---:|
+| **1** | Lab Setup — Kali Linux + VirtualBox | [Week-1 README](../Week-1-Lab-Setup/README.md) | ✅ Completed |
+| **2** | Footprinting, Scanning & Report Writing | [Week-2 README](../Week-2-Footprinting-Scanning/README.md) | ✅ Completed |
+| **3** | Cracking & Attacking — JTR & NW Tools | [Week-3 README](../Week-3-Cracking-Attacking/README.md) | ✅ Completed |
+| **4** | Capstone Pentest: Mediroza General Hospital | [Week-4 README](../Week-4-Full-Pentest-Project/README.md) | 🔄 In Progress |
 
 ---
 
